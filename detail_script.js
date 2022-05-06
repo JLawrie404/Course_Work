@@ -1,3 +1,5 @@
+//
+//
 //Declaring constant statements and look up relationships
 const startButton = document.querySelector(".startButton button");
 const rulesList = document.querySelector(".rulesList");
