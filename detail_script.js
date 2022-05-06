@@ -68,7 +68,7 @@ quit_quiz.onclick = ()=>{
 }
 
 const next_btn = document.querySelector("footer .next_btn");
-const bassCounter = document.querySelector("footer .total_que");
+const bottom_ques_counter = document.querySelector("footer .total_que");
 
 
 next_btn.onclick = ()=>{
@@ -210,5 +210,5 @@ function startTimerLine(time){
 function queCounter(index){
     //creating a new span tag and passing the question number and total question
     let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
-    bassCounter.innerHTML = totalQueCounTag;  //adding new span tag inside bassCounter
+    bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }// end of function
