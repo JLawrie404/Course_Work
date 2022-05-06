@@ -7,11 +7,11 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background: #185494;
+    background: #00fa9a;
 }
 ::selection{
     color: #fff;
-    background: #007bff;
+    background: #00fa9a;
 }
 .startButton,
 .rulesList,
@@ -35,7 +35,7 @@ body{
 .startButton button{
     font-size: 25px;
     font-weight: 500;
-    color: #007bff;
+    color: #00fa9a;
     padding: 15px 30px;
     outline: none;
     border: none;
@@ -72,7 +72,7 @@ body{
 }
 .rulesList .info-list .info span{
     font-weight: 600;
-    color: #007bff;
+    color: #00fa9a;
 }
 .rulesList .buttons{
     height: 60px;
@@ -92,7 +92,7 @@ body{
     border: none;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #007bff;
+    border: 1px solid #00fa9a;
     transition: all 0.3s ease;
 }
 .quiz_box{
@@ -121,7 +121,7 @@ body{
     font-weight: 600;
 }
 .quiz_box header .timer{
-    color: #004085;
+    color: #00fa9a;
     background: #cce5ff;
     border: 1px solid #b8daff;
     height: 45px;
@@ -155,7 +155,7 @@ body{
     bottom: 0px;
     left: 0px;
     height: 3px;
-    background: #007bff;
+    background: #00fa9a;
 }
 section{
     padding: 25px 30px 20px 30px;
@@ -253,8 +253,8 @@ footer button{
     outline: none;
     color: #fff;
     border-radius: 5px;
-    background: #007bff;
-    border: 1px solid #007bff;
+    background: #00fa9a;
+    border: 1px solid #00fa9a;
     line-height: 10px;
     opacity: 0;
     pointer-events: none;
@@ -285,7 +285,7 @@ footer button.show{
 }
 .results .icon{
     font-size: 100px;
-    color: #007bff;
+    color: #00fa9a;
     margin-bottom: 10px;
 }
 .results .complete_text{
@@ -316,21 +316,21 @@ footer button.show{
     border: none;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #007bff;
+    border: 1px solid #00fa9a;
     transition: all 0.3s ease;
 }
 .buttons button.restart{
     color: rgb(175, 38, 38);
-    background: #007bff;
+    background: #00fa9a;
 }
 .buttons button.restart:hover{
     background: #0263ca;
 }
 .buttons button.quit{
-    color: #007bff;
+    color: #00fa9a;
     background: #fff;
 }
 .buttons button.quit:hover{
     color: #fff;
-    background: #007bff;
+    background: #00fa9a;
 }
