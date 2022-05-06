@@ -7,7 +7,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background: #007bff;
+    background: #185494;
 }
 ::selection{
     color: #fff;
@@ -320,7 +320,7 @@ footer button.show{
     transition: all 0.3s ease;
 }
 .buttons button.restart{
-    color: #fff;
+    color: rgb(175, 38, 38);
     background: #007bff;
 }
 .buttons button.restart:hover{
