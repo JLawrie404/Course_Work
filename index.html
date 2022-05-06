@@ -1,68 +1,73 @@
-<html lang="en"> <!-- Set language-->
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technology Quiz</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Reference to source css design format-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> <!-- Icons embedment link -->
+    <meta charset="UTF-8">,
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">,
+    <title>Awesome Quiz App | CodingNepal</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAweome CDN Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>
-    <!-- Start Quiz button -->
-    <div class="startButton"><button>Begin Quiz</button></div>
-    <!-- Warning Rule List -->
+    <!-- start Quiz button -->
+    <div class="startButton"><button>Start Quiz</button></div>
+    <!-- Info Box -->
     <div class="rulesList">
         <div class="info-title"><span>Some Rules of this Quiz</span></div>
         <div class="info-list">
-            <div class="info">1. You will have only <span>10 seconds</span> per each question.</div>
-            <div class="info">2. All answer Seclection is final.</div>
-            <div class="info">3. Answers are locked in once the timer goes off</div>
-            <div class="info">4. Once you start you cannot pause or exit the quiz</div>
-            <div class="info">5. You will get one point per correct answer</div>
+            <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
+            <div class="info">2. Once you select your answer, it can't be undone.</div>
+            <div class="info">3. You can't select any option once time goes off.</div>
+            <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+            <div class="info">5. You'll get points on the basis of your correct answers.</div>
         </div>
         <div class="buttons">
-            <button class="quit">Exit Quiz</button><!-- Button to allow user to Exit Quiz -->
-            <button class="restart">Continue</button> <!-- Button to allow user to restart Quiz -->
+            <button class="quit">Exit Quiz</button>
+            <button class="restart">Continue</button>
         </div>
     </div>
-
+    <!-- Quiz Box -->
     <div class="quiz_box">
         <header>
-            <div class="title">Technology Quiz</div>
+            <div class="title">Awesome Quiz Application</div>
             <div class="timer">
-                <div class="time_left_txt">Time Left</div> <!-- Count Down timr display box--> 
-                <div class="timer_sec">10</div>
+                <div class="time_left_txt">Time Left</div>
+                <div class="timer_sec">15</div>
             </div>
             <div class="time_line"></div>
         </header>
         <section>
-            <div class="que_text"> <!-- Questions from questions JavaScript file are dispalyd in this box-->
+            <div class="que_text">
+                <!-- Here I've inserted question from JavaScript -->
             </div>
-            <div class="answerList"> <!-- Answer List is displayed here-->
+            <div class="answerList">
+                <!-- Here I've inserted options from JavaScript -->
             </div>
         </section>
-
+        <!-- footer of Quiz Box -->
         <footer>
-            <div class="total_que"> <!-- Here I've inserted Question Count Number from JavaScript -->
+            <div class="total_que">
+                <!-- Here I've inserted Question Count Number from JavaScript -->
             </div>
             <button class="next_btn">Next Que</button>
         </footer>
     </div>
-
+    <!-- Result Box -->
     <div class="results">
         <div class="icon">
-            <i class="fas fa-crown"></i> <!-- Celabration image taken from seperately loaded in css file -->
+            <i class="fas fa-crown"></i>
         </div>
-        <div class="complete_text">Congratulations! You have completed the Quiz</div>
-        <div class="score_text"> <!-- Quiz Scores, accumulated in Javascript files are displayed Here -->
+        <div class="complete_text">You've completed the Quiz!</div>
+        <div class="score_text">
+            <!-- Here I've inserted Score Result from JavaScript -->
         </div>
         <div class="buttons">
-            <button class="restart">Replay Quiz</button> <!-- Button to allow user to restart Quiz -->
-            <button class="quit">Quit Quiz</button><!-- Button to allow user to Exit Quiz -->
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Quit Quiz</button>
         </div>
     </div>
-    <!-- This JavaScript file contains the questions and answers. This will allow for adaption of quiz material while maintaining format.-->
+    <!-- Inside this JavaScript file I've inserted Questions and Options only -->
     <script src="questions.js"></script>
-    <!-- This Java Script file contians all of the functions and processess for the quiz -->
+    <!-- Inside this JavaScript file I've coded all Quiz Codes -->
     <script src="detail_script.js"></script>
 </body>
 </html>
