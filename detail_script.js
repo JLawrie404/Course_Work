@@ -154,15 +154,15 @@ function showResult(){
     const scoreText = results.querySelector(".score_text");
     if (playerScore > 4){ // if user scored more than 4
         //creating a new span tag and passing the user score number and total question number
-        let scoreTag = '<span>and Congratulations! , You got <p>'+ playerScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>Congratulations! , You got <p>'+ playerScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
     }
     else if(playerScore > 1){ // if user scored more than 1
-        let scoreTag = '<span>and Good Try , You got <p>'+ playerScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>Good Try, You got <p>'+ playerScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
     else{ // if user scored less than 1
-        let scoreTag = '<span>and Poor Show , You only got <p>'+ playerScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>Poor Show. You only got <p>'+ playerScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }// end of double nested if statement 
 }// end of function
