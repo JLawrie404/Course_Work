@@ -59,7 +59,7 @@ restart_quiz.onclick = ()=>{
     startTimer(counterTime); //calling start timer function
     startTimerLine(counterSnake); //calling start timer Line function
     timeRemaining.textContent = "Time Left"; //change the text of time remaining to time Left
-    continueButton.classList.remove("show"); //hide the next button
+    next_btn.classList.remove("show"); //hide the next button
 }
 
 // if exit quiz selected
@@ -67,11 +67,11 @@ quit_quiz.onclick = ()=>{
     window.location.reload(); //reload the current window without reload of webpage being required
 }
 
-const continueButton = document.querySelector("footer .continueButton");
+const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
 
 
-continueButton.onclick = ()=>{
+next_btn.onclick = ()=>{
     if(currentQuestion < questions.length - 1){ //if loop question count is less than total number of questions
         currentQuestion++; //increment the currentQuestion value
         questionNumber++; //increment the questionNumber value
@@ -82,7 +82,7 @@ continueButton.onclick = ()=>{
         startTimer(counterTime); //calling startTimer function
         startTimerLine(counterSnake); //calling startTimerLine function
         timeRemaining.textContent = "Time Left"; //change the timeRemaining to Time Left
-        continueButton.classList.remove("show"); //hide the next button
+        next_btn.classList.remove("show"); //hide the next button
     }else{
         clearInterval(counter); //clear counter
         clearInterval(maxScore); //clear max score
@@ -144,7 +144,7 @@ function optionSelected(answer){
     for(i=0; i < allOptions; i++){
         answerList.children[i].classList.add("disabled"); //once user select an option then disabled all options
     }
-    continueButton.classList.add("show"); //show the next button if user selected any option
+    next_btn.classList.add("show"); //show the next button if user selected any option
 }// end of function
 
 function showResult(){
@@ -191,7 +191,7 @@ function startTimer(time){
             for(i=0; i < allOptions; i++){
                 answerList.children[i].classList.add("disabled"); //once user select an option then disabled all options
             }// end of for loop
-            continueButton.classList.add("show"); //show the next button if user selected any option
+            next_btn.classList.add("show"); //show the next button if user selected any option
         }// end of if statement
     }// end of function
 }// end of function
