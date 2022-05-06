@@ -25,8 +25,8 @@ nextButton.onclick = ()=>{
     rulesList.classList.remove("activeInfo"); //hides rule list
     quiz_box.classList.add("activeQuiz"); 
     // Call functions to start timer and start/progress quiz via question number
-    displayQuestions(0); 
-    questionCounter(1); 
+    showQuetions(0); 
+    queCounter(1); 
     startTimer(10); 
     startTimerLine(0); 
 }
@@ -52,8 +52,8 @@ restart_quiz.onclick = ()=>{
     questionNumber = 1;
     playerScore = 0;
     counterSnake = 0;
-    displayQuestions(currentQuestion); //calling showQestions function
-    questionCounter(questionNumber); //passing questionNumber value to questionCounter
+    showQuetions(currentQuestion); //calling showQestions function
+    queCounter(questionNumber); //passing questionNumber value to queCounter
     clearInterval(counter); //clear counter
     clearInterval(maxScore); //clear max score
     startTimer(counterTime); //calling start timer function
@@ -75,8 +75,8 @@ next_btn.onclick = ()=>{
     if(currentQuestion < questions.length - 1){ //if loop question count is less than total number of questions
         currentQuestion++; //increment the currentQuestion value
         questionNumber++; //increment the questionNumber value
-        displayQuestions(currentQuestion); //calling showQestions function
-        questionCounter(questionNumber); //passing questionNumber value to questionCounter
+        showQuetions(currentQuestion); //calling showQestions function
+        queCounter(questionNumber); //passing questionNumber value to queCounter
         clearInterval(counter); //clear counter
         clearInterval(maxScore); //clear max score
         startTimer(counterTime); //calling startTimer function
@@ -91,7 +91,7 @@ next_btn.onclick = ()=>{
 }
 
 // look up questions and answers from java array
-function displayQuestions(index){
+function showQuetions(index){
     const que_text = document.querySelector(".que_text");
 
     // devides question and answers into selectable options
@@ -207,7 +207,7 @@ function startTimerLine(time){
     }// end of function
 }// end of function
 
-function questionCounter(index){
+function queCounter(index){
     //creating a new span tag and passing the question number and total question
     let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
