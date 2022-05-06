@@ -1,4 +1,4 @@
-/* importing google fonts */
+/* imported Font From Google*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
     margin: 0;
@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+/* Design of main background*/
 body{
     background: #00fa9a;
 }
@@ -13,6 +14,7 @@ body{
     color: #fff;
     background: #00fa9a;
 }
+/* Design of centre boxes*/
 .startButton,
 .rulesList,
 .quiz_box,
@@ -59,7 +61,7 @@ body{
     display: flex;
     align-items: center;
     padding: 0 30px;
-    border-radius: 5px 5px 0 0;
+    border-radius: 4px 4px 0 0;
     font-size: 20px;
     font-weight: 600;
 }
@@ -171,7 +173,7 @@ section .answerList{
 }
 section .answerList .option{
     background: aliceblue;
-    border: 1px solid #84c5fe;
+    border: 1px solid #fee884;
     border-radius: 5px;
     padding: 8px 15px;
     font-size: 17px;
@@ -190,13 +192,14 @@ section .answerList .option:hover{
     background: #cce5ff;
     border: 1px solid #b8daff;
 }
+/* Design of answer boxes, includes colour changes for incorrect/correct answers*/
 section .answerList .option.correct{
     color: #155724;
     background: #d4edda;
     border: 1px solid #c3e6cb;
 }
 section .answerList .option.incorrect{
-    color: #721c24;
+    color: #d30015;
     background: #f8d7da;
     border: 1px solid #f5c6cb;
 }
