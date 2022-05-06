@@ -1,7 +1,6 @@
 //Creates an array to hold data such as quiz questions, question number, possible answers and correct answer
 //A seperate file is used to increase readability of project and allow for any future changes
 
-
 let questions = [
     {
     numb: 1,
