@@ -26,8 +26,8 @@ nextButton.onclick = ()=>{
     rulesList.classList.remove("activeInfo"); //hides rule list
     quiz_box.classList.add("activeQuiz"); 
     // Call functions to start timer and start/progress quiz via question number
-    showQuetions(0); 
-    queCounter(1); 
+    displayQuestions(0); 
+    questionCounter(1); 
     startTimer(10); 
     startTimerLine(0); 
 }
@@ -53,14 +53,14 @@ restart_quiz.onclick = ()=>{
     questionNumber = 1;
     playerScore = 0;
     counterSnake = 0;
-    showQuetions(currentQuestion); //calling showQestions function
-    queCounter(questionNumber); //passing questionNumber value to queCounter
-    clearInterval(counter); //clear counter
-    clearInterval(maxScore); //clear max score
+    displayQuestions(currentQuestion); //calling showQestions function
+    questionCounter(questionNumber); //passing questionNumber value to questionCounter
+    clearCounter(counter); //clear counter
+    clearCounter(maxScore); //clear max score
     startTimer(counterTime); //calling start timer function
     startTimerLine(counterSnake); //calling start timer Line function
     timeRemaining.textContent = "Time Left"; //change the text of time remaining to time Left
-    next_btn.classList.remove("show"); //hide the next button
+    nextButton.classList.remove("show"); //hide the next button
 }
 
 // if exit quiz selected
@@ -68,31 +68,31 @@ quit_quiz.onclick = ()=>{
     window.location.reload(); //reload the current window without reload of webpage being required
 }
 
-const next_btn = document.querySelector("footer .next_btn");
-const bottom_ques_counter = document.querySelector("footer .total_que");
+const nextButton = document.querySelector("footer .nextButton");
+const bassCounter = document.querySelector("footer .total_que");
 
 
-next_btn.onclick = ()=>{
+nextButton.onclick = ()=>{
     if(currentQuestion < questions.length - 1){ //if loop question count is less than total number of questions
         currentQuestion++; //increment the currentQuestion value
         questionNumber++; //increment the questionNumber value
-        showQuetions(currentQuestion); //calling showQestions function
-        queCounter(questionNumber); //passing questionNumber value to queCounter
-        clearInterval(counter); //clear counter
-        clearInterval(maxScore); //clear max score
+        displayQuestions(currentQuestion); //calling showQestions function
+        questionCounter(questionNumber); //passing questionNumber value to questionCounter
+        clearCounter(counter); //clear counter
+        clearCounter(maxScore); //clear max score
         startTimer(counterTime); //calling startTimer function
         startTimerLine(counterSnake); //calling startTimerLine function
         timeRemaining.textContent = "Time Left"; //change the timeRemaining to Time Left
-        next_btn.classList.remove("show"); //hide the next button
+        nextButton.classList.remove("show"); //hide the next button
     }else{
-        clearInterval(counter); //clear counter
-        clearInterval(maxScore); //clear max score
+        clearCounter(counter); //clear counter
+        clearCounter(maxScore); //clear max score
         showResult(); //calling show result function
     }// end of if statement
 }
 
 // look up questions and answers from java array
-function showQuetions(index){
+function displayQuestions(index){
     const que_text = document.querySelector(".que_text");
 
     // devides question and answers into selectable options
@@ -117,8 +117,8 @@ let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 
 //if user clicked on option
 function optionSelected(answer){
-    clearInterval(counter); //clear counter
-    clearInterval(maxScore); //clear max score
+    clearCounter(counter); //clear counter
+    clearCounter(maxScore); //clear max score
     let userAns = answer.textContent; 
     let correcAns = questions[currentQuestion].answer; //sets correct answer into correcAns variable
     const allOptions = answerList.children.length; 
@@ -145,7 +145,7 @@ function optionSelected(answer){
     for(i=0; i < allOptions; i++){
         answerList.children[i].classList.add("disabled"); //once user select an option then disabled all options
     }
-    next_btn.classList.add("show"); //show the next button if user selected any option
+    nextButton.classList.add("show"); //show the next button if user selected any option
 }// end of function
 
 function showResult(){
@@ -155,15 +155,15 @@ function showResult(){
     const scoreText = results.querySelector(".score_text");
     if (playerScore > 4){ // if user scored more than 4
         //creating a new span tag and passing the user score number and total question number
-        let scoreTag = '<span>and Congratulations! , You got <p>'+ playerScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>Well Done! You achieved <p>'+ playerScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
     }
     else if(playerScore > 1){ // if user scored more than 1
-        let scoreTag = '<span>and Good Try , You got <p>'+ playerScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span> Good Try, You got <p>'+ playerScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
     else{ // if user scored less than 1
-        let scoreTag = '<span>and Poor Show , You only got <p>'+ playerScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>Poor Show! You only got <p>'+ playerScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }// end of double nested if statement 
 }// end of function
@@ -178,7 +178,7 @@ function startTimer(time){
             timeCalculator.textContent = "0" + addZero; 
         }// end of if statement 
         if(time < 0){ //if timer is less than 0
-            clearInterval(counter); //clear counter
+            clearCounter(counter); //clear counter
             timeRemaining.textContent = "Time Off"; //change the time text to time off
             const allOptions = answerList.children.length; //getting all option items
             let correcAns = questions[currentQuestion].answer; //getting correct answer from array
@@ -192,7 +192,7 @@ function startTimer(time){
             for(i=0; i < allOptions; i++){
                 answerList.children[i].classList.add("disabled"); //once user select an option then disabled all options
             }// end of for loop
-            next_btn.classList.add("show"); //show the next button if user selected any option
+            nextButton.classList.add("show"); //show the next button if user selected any option
         }// end of if statement
     }// end of function
 }// end of function
@@ -203,13 +203,13 @@ function startTimerLine(time){
         time += 1; //upgrading time value with 1
         time_line.style.width = time + "px"; //increasing width by 1px and increasing the snake timer 
         if(time > 549){ //if time value is greater than 549
-            clearInterval(maxScore); //clear maxScore
+            clearCounter(maxScore); //clear maxScore
         }// end of if statement 
     }// end of function
 }// end of function
 
-function queCounter(index){
+function questionCounter(index){
     //creating a new span tag and passing the question number and total question
-    let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
-    bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
+    let questionTotal = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
+    bassCounter.innerHTML = questionTotal;  //adding new span tag inside bassCounter
 }// end of function
