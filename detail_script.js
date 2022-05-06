@@ -54,8 +54,8 @@ restart_quiz.onclick = ()=>{
     counterSnake = 0;
     displayQuestions(currentQuestion); //calling showQestions function
     questionCounter(questionNumber); //passing questionNumber value to questionCounter
-    clearCounter(counter); //clear counter
-    clearCounter(maxScore); //clear max score
+    clearInterval(counter); //clear counter
+    clearInterval(maxScore); //clear max score
     startTimer(counterTime); //calling start timer function
     startTimerLine(counterSnake); //calling start timer Line function
     timeRemaining.textContent = "Time Left"; //change the text of time remaining to time Left
@@ -68,7 +68,7 @@ quit_quiz.onclick = ()=>{
 }
 
 const continueButton = document.querySelector("footer .continueButton");
-const bassCounter = document.querySelector("footer .total_que");
+const bottom_ques_counter = document.querySelector("footer .total_que");
 
 
 continueButton.onclick = ()=>{
@@ -77,15 +77,15 @@ continueButton.onclick = ()=>{
         questionNumber++; //increment the questionNumber value
         displayQuestions(currentQuestion); //calling showQestions function
         questionCounter(questionNumber); //passing questionNumber value to questionCounter
-        clearCounter(counter); //clear counter
-        clearCounter(maxScore); //clear max score
+        clearInterval(counter); //clear counter
+        clearInterval(maxScore); //clear max score
         startTimer(counterTime); //calling startTimer function
         startTimerLine(counterSnake); //calling startTimerLine function
         timeRemaining.textContent = "Time Left"; //change the timeRemaining to Time Left
         continueButton.classList.remove("show"); //hide the next button
     }else{
-        clearCounter(counter); //clear counter
-        clearCounter(maxScore); //clear max score
+        clearInterval(counter); //clear counter
+        clearInterval(maxScore); //clear max score
         showResult(); //calling show result function
     }// end of if statement
 }
@@ -116,8 +116,8 @@ let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 
 //if user clicked on option
 function optionSelected(answer){
-    clearCounter(counter); //clear counter
-    clearCounter(maxScore); //clear max score
+    clearInterval(counter); //clear counter
+    clearInterval(maxScore); //clear max score
     let userAns = answer.textContent; 
     let correcAns = questions[currentQuestion].answer; //sets correct answer into correcAns variable
     const allOptions = answerList.children.length; 
@@ -177,7 +177,7 @@ function startTimer(time){
             timeCalculator.textContent = "0" + addZero; 
         }// end of if statement 
         if(time < 0){ //if timer is less than 0
-            clearCounter(counter); //clear counter
+            clearInterval(counter); //clear counter
             timeRemaining.textContent = "Time Off"; //change the time text to time off
             const allOptions = answerList.children.length; //getting all option items
             let correcAns = questions[currentQuestion].answer; //getting correct answer from array
@@ -202,13 +202,13 @@ function startTimerLine(time){
         time += 1; //upgrading time value with 1
         time_line.style.width = time + "px"; //increasing width by 1px and increasing the snake timer 
         if(time > 549){ //if time value is greater than 549
-            clearCounter(maxScore); //clear maxScore
+            clearInterval(maxScore); //clear maxScore
         }// end of if statement 
     }// end of function
 }// end of function
 
 function questionCounter(index){
     //creating a new span tag and passing the question number and total question
-    let questionTotal = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
-    bassCounter.innerHTML = questionTotal;  //adding new span tag inside bassCounter
+    let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
+    bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }// end of function
