@@ -28,12 +28,12 @@ nextButton.onclick = ()=>{
     // Call functions to start timer and start/progress quiz via question number
     displayQuestions(0); 
     questionCounter(1); 
-    startTimer(10); 
+    startTimer(15); 
     startTimerLine(0); 
 }
 
 // Declare and initialsie variables
-let counterTime =  10;
+let counterTime =  15;
 let currentQuestion = 0;
 let questionNumber = 1;
 let playerScore = 0;
@@ -48,7 +48,7 @@ const quit_quiz = results.querySelector(".buttons .quit");
 restart_quiz.onclick = ()=>{
     quiz_box.classList.add("activeQuiz"); //show quiz box
     results.classList.remove("activeResult"); //hide results box
-    counterTime = 10; 
+    counterTime = 15; 
     currentQuestion = 0;
     questionNumber = 1;
     playerScore = 0;
